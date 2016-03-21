@@ -1,5 +1,14 @@
 == README
 
+an overview of your project:
+This app is an open source contacts website where people can indicate demographic information, work information, as well as relationship information (when person met the contact and the last time the person communicated with the contact).
+
+indicate where your planning docs are
+The planning docs are in the "planning" folder in the app root directory. The docs include photos of the wireframes and user stories.
+
+eventually, discuss your project
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
