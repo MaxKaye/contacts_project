@@ -1,4 +1,4 @@
-As a person, I want to add contacts so I can see an organized list of my contacts and their demographic / work information.
+As a person, I want to be able to add contacts so I can see an organized list of my contacts and their demographic / work information.
 As a person, I want to be able to manually edit contact information
 As a person, I want to know when the first time I met the contact and the last time we interacted
 As a person, I want to view other peoples contacts so I can reach out to them
