@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160322134615) do
   end
 
   create_table "people", force: :cascade do |t|
+    t.string   "email"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
