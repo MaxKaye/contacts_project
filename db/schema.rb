@@ -22,8 +22,15 @@ ActiveRecord::Schema.define(version: 20160322134615) do
   end
 
   create_table "people", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "age"
+    t.string   "ethnicity"
+    t.string   "origin"
+    t.string   "gender"
+    t.string   "occupation"
+    t.string   "company"
     t.string   "email"
-    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
