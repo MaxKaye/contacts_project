@@ -17,6 +17,16 @@ ActiveRecord::Schema.define(version: 20160322134615) do
   enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
+    t.integer  "person_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "age"
+    t.string   "ethnicity"
+    t.string   "origin"
+    t.string   "gender"
+    t.string   "occupation"
+    t.string   "company"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

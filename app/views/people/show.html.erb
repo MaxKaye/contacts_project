@@ -1,0 +1,12 @@
+<h2><%= @person.name %> <a href="/people/<%= @person.id %>/edit">(edit)</a></h2>
+<h4><%= @person.origin %></h4>
+
+<h3>Contacts <%= link_to "(+)", new_person_contact_path(@person) %></h3>
+<ul>
+  <% @person.contacts.each do |person| %>
+    <li>
+      <%= link_to "#{contact.first_name} (#{contact.last_name})", person_contact_path(@person, contact) %>
+    </li>
+
+  <% end %>
+</ul>
