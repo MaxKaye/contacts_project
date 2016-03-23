@@ -2,7 +2,7 @@ require 'csv'
 
 Person.delete_all
 
-CSV.foreach('db/.csv', headers: true) do |row|
+CSV.foreach('db/Contacts.csv', headers: true) do |row|
   Person.create(
     {
       first_name: row['first_name'],
