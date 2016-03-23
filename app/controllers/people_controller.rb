@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def index
-
+  
     @email_domain = params[:email_domain] || 'All'
 
     # get all people
@@ -10,6 +10,7 @@ class PeopleController < ApplicationController
     @email_domains = []
     # filter the people based on domain name, when provided
     @people.to_a.select! { |p| p.email.index @email_domain } unless @email_domain == 'All'
+
   end
 
   def new
@@ -35,7 +36,7 @@ class PeopleController < ApplicationController
     def update
       @person = Person.find(params[:id])
       @person.update(person_params)
-      redirect_to person_path(@person)
+      redirect_to root_path
     end
 
     def destroy

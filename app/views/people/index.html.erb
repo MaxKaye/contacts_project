@@ -4,6 +4,7 @@
 
   <div class='col-md-9'>
     <table class='table table-striped'>
+    <th>Update</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Age</th>
@@ -16,6 +17,7 @@
 
     <% @people.each do |person| %>
       <tr>
+        <td><%= link_to "Update", edit_person_path(person) %></td>
         <td><%= person.first_name %></td>
         <td><%= person.last_name %></td>
         <td><%= person.age %></td>

@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   # index
   def index
     @contacts = Contact.all
+    @contact = Contact.find(params[:person_id])
   end
 
   # new

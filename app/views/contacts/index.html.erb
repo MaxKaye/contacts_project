@@ -1,0 +1,34 @@
+<h1>Contact <%=link_to "(+)", new_person_contact_path(@person) %></h1>
+
+<div class='row'>
+
+  <div class='col-md-9'>
+    <table class='table table-striped'>
+    <th>Update</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Ethnicity</th>
+    <th>Origin</th>
+    <th>Gender</th>
+    <th>Occupation</th>
+    <th>Company</th>
+    <th>Email</th>
+
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to "Update", edit_contact_path(contact) %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.age %></td>
+        <td><%= person.ethnicity %></td>
+        <td><%= person.origin %></td>
+        <td><%= person.gender %></td>
+        <td><%= person.occupation %></td>
+        <td><%= person.company %></td>
+        <td><%= person.email %></td>
+
+      </tr>
+    <% end %>
+    </table>
+  </div>
