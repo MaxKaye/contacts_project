@@ -13,12 +13,12 @@ class ContactsController < ApplicationController
 
   # create
   def create
-    @person = Person.find(params[:contact_id])
-    @contact = Contact.create!(contact_params.merge(person: @person))
-    redirect_to contact_contact_path(@person, @contact)
+    @person = Person.find(params[:person_id])
+    @contact = @person.contacts.create(contact_params)
+    redirect_to person_path(@person)
   end
 
-  #show
+  
   def show
     @contact = Contact.find(params[:id])
   end
@@ -38,13 +38,14 @@ class ContactsController < ApplicationController
 
   # destroy
   def destroy
-    @contact = Contact.find(params[:id])
+    @person = Person.find(params[:person_id])
+    @contact = @person.contacts.find(params[:id])
     @contact.destroy
-    redirect_to contacts_path
+    redirect_to person_path(@person)
   end
 
   private
   def contact_params
-    params.require(:person).permit(:first_name, :last_name, :age, :ethnicity, :origin, :gender, :occupation, :company, :email)
+    params.require(:contact).permit(:first_name, :last_name, :age, :ethnicity, :origin, :gender, :occupation, :company, :email)
   end
 end
