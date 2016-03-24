@@ -10,6 +10,10 @@ class CreateContacts < ActiveRecord::Migration
       t.string :gender
       t.string :occupation
       t.string :company
+      t.string :year_met
+      t.string :place_met
+      t.string :last_in_contact
+      t.string :network_size
       t.string :email
     end
   end

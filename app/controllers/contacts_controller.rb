@@ -1,8 +1,9 @@
 class ContactsController < ApplicationController
   # index
   def index
-    @contacts = Contact.all
-    @contact = Contact.find(params[:person_id])
+    # @contacts = Contact.all
+    @person = Person.find(params[:person_id])
+    @contacts = @person.contacts
   end
 
   # new
@@ -18,20 +19,22 @@ class ContactsController < ApplicationController
     redirect_to person_path(@person)
   end
 
-  
+
   def show
-    @contact = Contact.find(params[:id])
+    @person = Person.find(params[:person_id])
+    @contact = @person.contacts.find(params[:id])
   end
 
   # edit
   def edit
-    @contact = Contact.find(params[:id])
+    @person = Person.find(params[:person_id])
+    @contact = @person.contacts.find(params[:id])
   end
 
   # update
   def update
     @contact = Contact.find(params[:id])
-    @person = Person.find(params[:contact_id])
+    @person = Person.find(params[:person_id])
     @contact.update(contact_params.merge(person: @person))
     redirect_to person_contact_path(@contact.person, @contact)
   end
@@ -46,6 +49,6 @@ class ContactsController < ApplicationController
 
   private
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :age, :ethnicity, :origin, :gender, :occupation, :company, :email)
+    params.require(:contact).permit(:last_name, :first_name, :age, :ethnicity, :origin, :gender, :occupation, :company, :year_met, :place_met, :last_in_contact, :network_size, :email)
   end
 end

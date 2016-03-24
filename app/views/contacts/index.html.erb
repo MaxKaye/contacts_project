@@ -5,28 +5,37 @@
   <div class='col-md-9'>
     <table class='table table-striped'>
     <th>Update</th>
-    <th>First Name</th>
     <th>Last Name</th>
+    <th>First Name</th>
     <th>Age</th>
     <th>Ethnicity</th>
     <th>Origin</th>
     <th>Gender</th>
     <th>Occupation</th>
     <th>Company</th>
+    <th>Year Met</th>
+    <th>Place Met</th>
+    <th>Last in Contact</th>
+    <th>Network Size(L/S)</th>
     <th>Email</th>
+
 
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= link_to "Update", edit_contact_path(contact) %></td>
-        <td><%= person.first_name %></td>
-        <td><%= person.last_name %></td>
-        <td><%= person.age %></td>
-        <td><%= person.ethnicity %></td>
-        <td><%= person.origin %></td>
-        <td><%= person.gender %></td>
-        <td><%= person.occupation %></td>
-        <td><%= person.company %></td>
-        <td><%= person.email %></td>
+        <td><%= link_to "Update", edit_person_contact_path(@person, contact) %></td>
+        <td><%= contact.last_name %></td>
+        <td><%= contact.first_name %></td>
+        <td><%= contact.age %></td>
+        <td><%= contact.ethnicity %></td>
+        <td><%= contact.origin %></td>
+        <td><%= contact.gender %></td>
+        <td><%= contact.occupation %></td>
+        <td><%= contact.company %></td>
+        <td><%= contact.year_met %></td>
+        <td><%= contact.place_met %></td>
+        <td><%= contact.last_in_contact %></td>
+        <td><%= contact.network_size %></td>
+        <td><%= contact.email %></td>
 
       </tr>
     <% end %>
